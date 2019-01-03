@@ -1,0 +1,84 @@
+
+/*
+################################################################################
+### Global Room Parent #########################################################
+
+https://github.com/lcanady/CrescentMoonMux
+
+Formatted for Muxify: http://muxify.musoapbox.net/editor.html
+
+Usage
+    @parent <target room dbref>=<parent room dbref>
+
+And in your .config file add the following line to automatically assign your
+room parent to any new rooms created:
+
+    room_parent <parent room dbref>
+
+This is the parent room for Crescent Moon Mux. It's set through the .config file
+as parent_room and should be automatically set when new rooms are created.
+
+Requirements:
+    header(<text>):         Game's pretty header function.
+    idletime(<player>):     Checks a player's idle time.
+    shortdesc(<player>):    Display a player's &short-desc attribute
+    issecondary(<exit>):    Checks for a secondary exit attribute
+    istertiary(<exit>):     Checks for tertiary exit attritbute
+
+--------------------------------------------------------------------------------
+--- Setup ----------------------------------------------------------------------
+*/
+@dig Global Room Parent <GRP>
+-
+@fo me=&d.grp=[search( name=Global Room Parent <GRP> )]
+-
+@set [v( d.grp )]=safe floating halt
+-
+/*
+--------------------------------------------------------------------------------
+--- configuration --------------------------------------------------------------
+
+These are the settings to change the basic apperance of your Global Room Parent
+
+*/
+
+// .header related config settings for @conformat & @exitformat
+
+&config.color     [v( d.grp )]= r
+-
+&config.hcolor    [v( d.grp )]= hr
+-
+&config.text      [v( d.grp )]= h
+-
+&config.filler    [v( d.grp )]= -
+-
+&config.lsep      [v( d.grp )]= <<
+-
+&config.rsep      [v( d.grp )]= >>
+-
+
+// Color configuration for exits with &secondary or &tertiary attributes
+
+&config.secondary [v( d.grp )] = c
+-
+&config.tertiary  [v( d.grp )] = m
+-
+
+/*
+--------------------------------------------------------------------------------
+--- Name Format ----------------------------------------------------------------
+
+Format the room name to show the game header.  If the looker is staff/wizard or
+the owner of the room can see the dbref and flags list.
+
+*/
+
+@NameFormat [v( d.grp )]=
+    header(
+            [name( %! )]
+            [if(
+                or( match( %#, owner( %! ) ), orflags( %#, wWZ )),
+                %([num( me )][flags( %! )]%)
+            )]
+     )
+-
