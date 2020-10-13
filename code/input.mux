@@ -1,5 +1,5 @@
-#include ./code/input2.mux
-#include ./code/input3.mux
+#include ./input2.mux
+#include ./input3.mux
 
 /*
 --------------------------------------------------------------------------------
