@@ -1,0 +1,18 @@
+/*
+##############################################################################
+### TEST ARCHIVE #############################################################
+
+    This is a test archive for the mush-format sytem.  
+    * https://github.com/digibear-io/mush-format
+==============================================================================
+*/
+
+#header system=Test System
+#header author=Foobar
+#header email=mail@email.com
+#header url=www.example.com
+
+#output MuxCode.txt
+#file license.txt
+
+#include ./code/file1.mush
