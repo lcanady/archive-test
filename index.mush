@@ -17,4 +17,4 @@
 
 #include ./code/file1.mush
 
-#footer Compiled by=User1234
+#footer some_footer=User1234
