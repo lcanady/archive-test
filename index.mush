@@ -16,3 +16,5 @@
 #file license.txt
 
 #include ./code/file1.mush
+
+#footer Compiled by=User1234
