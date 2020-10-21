@@ -13,8 +13,10 @@
 #header url=www.example.com
 #footer some_footer=User1234
 
+// 
 #output MuxCode.txt
 #file license.txt
 
+#file ./license.txt
 #include ./code/file1.mush
 
