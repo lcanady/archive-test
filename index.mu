@@ -16,4 +16,4 @@
 #output archive-test.min.mush.txt
 #file ./license.txt
 
-#include ./code/file1.mush
+#include ./code/file1.mu
