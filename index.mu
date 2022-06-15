@@ -14,6 +14,6 @@
 #footer some_footer=User1234
 
 #output archive-test.min.mush.txt
-#file ./license.txt
+#file /license.txt
 
-#include ./code/file1.mu
+#include /code/file1.mu

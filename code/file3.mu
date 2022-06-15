@@ -1,2 +1,2 @@
 File 3
-#include ./file4.mu
+#include /file4.mu
